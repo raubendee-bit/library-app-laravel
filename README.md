@@ -44,51 +44,52 @@ A simple Laravel application for managing a library's book collection and borrow
 
 ---
 
-##🚀 Installation & Setup
-Clone the Repository
-
-Bash
+###🚀 Installation & Setup
+1. Clone the Repository
+```Bash
 git clone https://github.com/raubendee-bit/library-app-laravel.git
 cd library-app-laravel
-Install Dependencies
-
-Bash
+```
+2. Install Dependencies
+```Bash
 composer install
-Configure Environment
-
-Bash
+```
+3.Configure Environment
+```Bash
 cp .env.example .env
 php artisan key:generate
-Configure Database (SQLite)
+```
+4.Configure Database (SQLite)
 Open the .env file and update these lines to use SQLite:
-
-Plaintext
+```Plaintext
 DB_CONNECTION=sqlite
 # Remove or comment out DB_HOST, DB_PORT, DB_DATABASE, etc.
-Create the Database File
-
+```
+5.Create the Database File
 Windows (PowerShell):
-
+```
 PowerShell
 New-Item -ItemType File -Path database/database.sqlite
+```
 Mac/Linux/Git Bash:
-
-Bash
+```Bash
 touch database/database.sqlite
-Run Migrations
-
-Bash
+```
+6.Run Migrations
+```Bash
 php artisan migrate
-Link Storage (Important for Photos)
+```
+7.Link Storage (Important for Photos)
 Since this app handles book cover uploads, you must link the storage folder:
-
-Bash
+```Bash
 php artisan storage:link
-Start Development Server
-
-Bash
+```
+8.Start Development Server
+```Bash
 php artisan serve
-Visit Application
+```
+
+9.Visit Application
 Open your browser and go to: http://localhost:8000
 
 ## Database Schema
