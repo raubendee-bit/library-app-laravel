@@ -44,52 +44,52 @@ A simple Laravel application for managing a library's book collection and borrow
 
 ---
 
-## Installation
+###🚀 Installation & Setup
+Clone the Repository
 
-1. **Install Dependencies**
-   ```bash
-   composer install
-   npm install
-   ```
+Bash
+git clone https://github.com/raubendee-bit/library-app-laravel.git
+cd library-app-laravel
+Install Dependencies
 
-2. **Configure Environment**
-   ```bash
-   cp .env.example .env
-   php artisan key:generate
-   ```
+Bash
+composer install
+Configure Environment
 
-3. **Configure Database**
-   
-   Edit `.env` file and set your database credentials:
-   ```
-   DB_CONNECTION=mysql
-   DB_HOST=127.0.0.1
-   DB_PORT=3306
-   DB_DATABASE=library_app
-   DB_USERNAME=root
-   DB_PASSWORD=
-   ```
+Bash
+cp .env.example .env
+php artisan key:generate
+Configure Database (SQLite)
+Open the .env file and update these lines to use SQLite:
 
-4. **Run Migrations**
-   ```bash
-   php artisan migrate
-   ```
+Plaintext
+DB_CONNECTION=sqlite
+# Remove or comment out DB_HOST, DB_PORT, DB_DATABASE, etc.
+Create the Database File
 
-5. **Seed Database (Optional)**
-   
-   Add sample books to get started:
-   ```bash
-   php artisan db:seed
-   ```
+Windows (PowerShell):
 
-6. **Start Development Server**
-   ```bash
-   php artisan serve
-   ```
+PowerShell
+New-Item -ItemType File -Path database/database.sqlite
+Mac/Linux/Git Bash:
 
-7. **Visit Application**
-   
-   Open your browser and go to: `http://localhost:8000`
+Bash
+touch database/database.sqlite
+Run Migrations
+
+Bash
+php artisan migrate
+Link Storage (Important for Photos)
+Since this app handles book cover uploads, you must link the storage folder:
+
+Bash
+php artisan storage:link
+Start Development Server
+
+Bash
+php artisan serve
+Visit Application
+Open your browser and go to: http://localhost:8000
 
 ## Database Schema
     🛠️ Technologies Used
